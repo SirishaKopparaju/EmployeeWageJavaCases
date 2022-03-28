@@ -2,49 +2,40 @@ package Day4;
 
 public class EmployeeWages {
 
-	public static void main(String[]args) {
-		int empcheck=(int) (Math.floor(Math.random()*10)%3);
-		int Working_Hours = 0;
-	int salary;
-  int Per_Hour_Salary = 20;
-  int Total_Working_Days=100;
-  int day = 0;
-  
-		
-		switch(empcheck)
-		{
-		case 0:
-			Working_Hours=8;
-			salary=Per_Hour_Salary*Working_Hours;
-			System.out.println("Employee is full time"+salary);
-
-
-			break;
-		case 1: 
-			Working_Hours=4;
-			salary=Per_Hour_Salary*Working_Hours;
-			System.out.println("Employee is part time"+salary);
+		public static final int IS_PART_TIME=1;
+		public static final int IS_FULL_TIME=2;
+		public static final int EMP_RATE_PER_HOUR=20;
+		public static final int NUMBER_OF_WORKING_DAYS=2;
+		public static final int MAX_HOURS_IN_MONTH=10;
+		public static int computeEmpWage() {
+			int empHrs=0,totalEmpHrs=0,totalWorkingDays=0;
+			while(totalEmpHrs<=MAX_HOURS_IN_MONTH &&totalWorkingDays<NUMBER_OF_WORKING_DAYS) {
+				totalWorkingDays++;
+				int empcheck=(int) (Math.floor(Math.random()*10)%3);
+switch(empcheck)
+{
+case IS_PART_TIME:
+	empHrs=4;
+	break;
+case IS_FULL_TIME:
+	empHrs=8;
+	break;
+	default:
+		empHrs=0;
+}
+totalEmpHrs+=empHrs;
+System.out.println("Day#:"+totalWorkingDays + "Emp Hr:"+empHrs);
+			}
 			
-			break;
-		case 2:
-				Working_Hours=0;
-				salary=Per_Hour_Salary*Working_Hours;
-				System.out.println("Employee is absent"+salary);
-				break;
-		}
-	
-			while (day <= 20 && Total_Working_Days <= 100 )
-		{
-				        
-			salary=Per_Hour_Salary*Working_Hours;
-				        if ( Total_Working_Days >= 100){
-				        		{
-				        	Total_Working_Days=Total_Working_Days+salary;
-				                break;
-	}	
+int totalEmpWage=totalEmpHrs*EMP_RATE_PER_HOUR;
+System.out.println("Total Emp Wage:" +totalEmpWage);
+return totalEmpWage;
+			}
+		public static void main(String[]args) {
+				computeEmpWage();
+			}
 		
-				        }
-		}
-	}
+
+
 }
 		
