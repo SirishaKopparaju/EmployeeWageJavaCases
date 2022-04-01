@@ -7,7 +7,7 @@ public class EmployeeWages {
 		public static final int EMP_RATE_PER_HOUR=20;
 		public static final int NUMBER_OF_WORKING_DAYS=2;
 		public static final int MAX_HOURS_IN_MONTH=10;
-		public static int computeEmpWage() {
+		public static int computeEmpWage(String company,int EMP_RATE_PER_HOUR,int MAX_HOURS_IN_MONTH,int NUMBER_OF_WORKING_DAYS) {
 			int empHrs=0,totalEmpHrs=0,totalWorkingDays=0;
 			while(totalEmpHrs<=MAX_HOURS_IN_MONTH &&totalWorkingDays<NUMBER_OF_WORKING_DAYS) {
 				totalWorkingDays++;
@@ -32,7 +32,10 @@ System.out.println("Total Emp Wage:" +totalEmpWage);
 return totalEmpWage;
 			}
 		public static void main(String[]args) {
-				computeEmpWage();
+				computeEmpWage("demart",20,2,10);
+				computeEmpWage("relainace",10,3,20);
+
+				
 			}
 		
 
