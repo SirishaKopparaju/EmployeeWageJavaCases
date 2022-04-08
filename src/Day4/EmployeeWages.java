@@ -51,10 +51,7 @@ return " totalEmpWage for company:"+company +totalEmpWage;
 dmart.computeEmpWage();
 System.out.println(dmart);
 relainace.computeEmpWage();
-System.out.println(relainace);
-
-
-				
+System.out.println(relainace);	
 			}
 		
 
